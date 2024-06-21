@@ -46,7 +46,7 @@ exports.put = async (req, res) => {
   try {
     const dep = Department.findById(req.params.id);
     if (dep) {
-      const updatedDep = await Department.findOneAndUpdate(
+      const updatedDep = await Department.findByIdAndUpdate(
         { _id: req.params.id },
         { $set: { name } },
         { new: true }
